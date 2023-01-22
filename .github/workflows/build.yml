@@ -24,7 +24,7 @@ jobs:
         python3 -m pip install --user qmk
         qmk setup
 
-        apt install -y gcc-avr
+        sudo apt install -y gcc-avr
     - name: ls
       run: |
         ls -al
