@@ -12,9 +12,9 @@ jobs:
       with:
         repository: qmk/qmk_firmware
         ref: master
-    - name: update submodule
-      run: |
-        git submodule update --init --recursive
+    # - name: update submodule
+    #   run: |
+    #     git submodule update --init --recursive
     - name: install tools
       run: |
         rm -rf keyboards
@@ -29,3 +29,4 @@ jobs:
     - name: build
       run: |
         make keyboard=ergodox_ez keymap=keymap
+        ls -al
