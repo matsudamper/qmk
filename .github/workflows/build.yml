@@ -12,5 +12,6 @@ jobs:
     steps:
     - name: build
       run: |
+        cd /qmk_firmware
         qmk --help
         qmk compile -kb ergodox_ez -km keymap
