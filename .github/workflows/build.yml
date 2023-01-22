@@ -12,6 +12,10 @@ jobs:
       run: |
         DEB_QMK=$(deb https://linux.qmk.fm/ `cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//` main)
         echo $DEB_QMK >> /etc/apt/sources.list
+
+        curl https://linux.qmk.fm/gpg_pubkey.txt | sudo apt-key add -
+        sudo apt update
+        sudo apt install qmk
     - name: build
       run: |
         qmk --help
