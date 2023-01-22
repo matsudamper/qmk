@@ -35,7 +35,7 @@ jobs:
         find keyboards
     - name: build
       run: |
-        RGBLIGHT_ENABLE=false make -kb ergodox_ez -km default
+        RGBLIGHT_ENABLE=true make -kb ergodox_ez -km default
         find . | grep hex
     - name: build
       run: |
