@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: install tools
       run: |
-        CODENAME=focal // $(cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//)
+        CODENAME=focal # $(cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//)
         
         sudo sh -c "echo deb https://linux.qmk.fm/ $CODENAME main >> /etc/apt/sources.list"
 
