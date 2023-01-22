@@ -12,5 +12,5 @@ jobs:
     steps:
     - name: build
       run: |
-        qmk compile --help
-        qmk compile keymaps/ergodox_ex/keymap.c
+        qmk --help
+        qmk compile -kb ergodox_ez -km keymap
