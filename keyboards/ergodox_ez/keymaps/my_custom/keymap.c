@@ -239,9 +239,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case JAN:
       if (record->event.pressed) {
         if (IS_WIN) {
-          // SEND_STRING(SS_DOWN(X_LCTL)SS_TAP(X_GRAVE)SS_UP(X_LCTL));
+          SEND_STRING(SS_DOWN(X_LCTL)SS_TAP(X_GRAVE)SS_UP(X_LCTL));
         } else {
-          // SEND_STRING(SS_DOWN(X_LGUI)SS_TAP(X_SPACE)SS_UP(X_LGUI));
+          SEND_STRING(SS_DOWN(X_LGUI)SS_TAP(X_SPACE)SS_UP(X_LGUI));
         }
       }
       return false;
