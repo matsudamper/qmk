@@ -298,13 +298,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case WINDOW_DEL:
       if (record->event.pressed) {
-        // SEND_STRING(SS_DOWN(X_LALT)SS_TAP(X_F4)SS_UP(X_LALT));
+        SEND_STRING(SS_DOWN(X_LALT)SS_TAP(X_F4)SS_UP(X_LALT));
       }
       return false;
 
     case TILDE:
       if (record->event.pressed) {
-        // SEND_STRING(SS_DOWN(X_LSHIFT)SS_DOWN(X_GRAVE)SS_UP(X_GRAVE)SS_UP(X_LSHIFT));
+        SEND_STRING(SS_DOWN(X_LSHIFT)SS_DOWN(X_GRAVE)SS_UP(X_GRAVE)SS_UP(X_LSHIFT));
       }
       return false;
 
