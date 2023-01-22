@@ -1,0 +1,16 @@
+name: Build
+
+on:
+  push:
+    branch: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: qmkfm/qmk_cli
+    steps:
+    - name: build
+      run: |
+        qmk compile --help
+        qmk compile keymaps/ergodox_ex/keymap.c
