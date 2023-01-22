@@ -18,6 +18,11 @@ jobs:
     - uses: actions/checkout@v3
       with:
         path: keyboards
+    - name: setup
+      run: |
+        sudo apt install -y git python3-pip
+        python3 -m pip install --user qmk
+        qmk setup
     - name: build
       run: |
         make keyboard=ergodox_ez keymap=keymap
