@@ -1,12 +1,13 @@
 #include QMK_KEYBOARD_H
-#include "debug.h"
-#include "action_layer.h"
 #include "version.h"
 
-#define BASE 0 // default layer
-#define SYMB 1 // symbols
-#define MOUSE 2
-#define SCROLL 3
+enum layers {
+    BASE,  // default layer
+    SYMB,  // symbols
+    MDIA,  // media keys
+    MOUSE,
+    SCROLL
+};
 
 #define TRUE -1
 #define FALSE 0
