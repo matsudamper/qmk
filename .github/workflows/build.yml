@@ -12,7 +12,7 @@ jobs:
       run: |
         CODENAME=$(cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//)
         
-        echo "deb https://linux.qmk.fm/ $CODENAME main" >> /etc/apt/sources.list
+        sudo echo "deb https://linux.qmk.fm/ $CODENAME main" >> /etc/apt/sources.list
 
         curl https://linux.qmk.fm/gpg_pubkey.txt | sudo apt-key add -
         sudo apt update
