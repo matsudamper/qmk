@@ -28,5 +28,5 @@ jobs:
         qmk setup
     - name: build
       run: |
-        make keyboard=ergodox_ez keymap=my_custom
+        make -kb ergodox_ez -km my_custom
         find . | grep hex
