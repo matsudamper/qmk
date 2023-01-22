@@ -12,6 +12,7 @@ jobs:
     - name: move file
       run: |
         cp -r ./keyboards/* ./qmk_firmware/keyboards/
+        find ./qmk_firmware/keyboards/ | grep "keymap\.c$"
     - name: install tools
       run: |
         sudo apt install -y python3-pip
