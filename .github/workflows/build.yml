@@ -10,7 +10,8 @@ jobs:
     steps:
     - name: install tools
       run: |
-        deb https://linux.qmk.fm/ `cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//` main
+        DEB_QMK=$(deb https://linux.qmk.fm/ `cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//` main)
+        echo $DEB_QMK >> /etc/apt/sources.list
     - name: build
       run: |
         qmk --help
