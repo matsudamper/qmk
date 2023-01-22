@@ -26,7 +26,7 @@ jobs:
 
         sudo apt install -y gcc-avr avr-libc
 
-        suudoa apt install -y libusb-dev
+        sudo apt install -y libusb-dev
     - name: ls
       run: |
         ls -al
