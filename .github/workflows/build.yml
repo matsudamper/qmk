@@ -27,8 +27,6 @@ jobs:
         qmk setup
 
         sudo apt install -y gcc-avr avr-libc
-
-        sudo apt install -y libusb-dev
     - name: ls
       run: |
         ls -al
