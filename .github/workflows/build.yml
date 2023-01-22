@@ -9,12 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      repository: git@github.com:qmk/qmk_firmware.git
+      with:
+        repository: git@github.com:qmk/qmk_firmware.git
     - name: install tools
       run: |
         rm -rf keyboards
     - uses: actions/checkout@v3
-      path: keyboards
+      with:
+        path: keyboards
     - name: build
       run: |
         make keyboard=ergodox_ez keymap=keymap
