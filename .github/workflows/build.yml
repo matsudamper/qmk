@@ -30,6 +30,9 @@ jobs:
     - name: build
       run: |
         RGBLIGHT_ENABLE=true make ergodox_ez:my_custom
+    - name: find hex
+      run: |
+        find . | grep "\.hex$"
     - name: Create Release
       env:
         GH_TOKEN: ${{ github.token }}
