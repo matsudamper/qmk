@@ -7,11 +7,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: qmkfm/qmk_cli
     steps:
+    - name: install tools
+      run: |
+        curl https://linux.qmk.fm/gpg_pubkey.txt | sudo apt-key add -
+        apt update
+        apt install qmk
     - name: build
       run: |
-        cd /qmk_firmware
         qmk --help
+        qmk coompile --help
         qmk compile -kb ergodox_ez -km keymap
