@@ -8,17 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+      repository: git@github.com:qmk/qmk_firmware.git
     - name: install tools
       run: |
-        CODENAME=focal # $(cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//)
-        
-        sudo sh -c "echo deb https://linux.qmk.fm/ $CODENAME main >> /etc/apt/sources.list"
-
-        curl https://linux.qmk.fm/gpg_pubkey.txt | sudo apt-key add -
-        sudo apt update
-        sudo apt install qmk
+        rm -rf keyboards
+    - uses: actions/checkout@v3
+      path: keyboards
     - name: build
       run: |
-        qmk --help
-        qmk coompile --help
-        qmk compile -kb ergodox_ez -km keymap
+        make keyboard=ergodox_ez keymap=keymap
