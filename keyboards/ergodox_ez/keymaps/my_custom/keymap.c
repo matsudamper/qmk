@@ -27,8 +27,6 @@ enum custom_keycodes {
   JAN,
   WIN_L,
   WIN_R,
-  SETS_L,
-  SETS_R,
   OS_CHANGE,
   WIN_TAB,
   TAB_NEXT,
@@ -88,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,---------------------------------------------------.           ,--------------------------------------------------.
  * |    `    |  F1  |  F2  |  F3  |  F4  |  F5  |  OS  |           | Mute |  F6  |  F7  |  F8  |  F9  |  F10 |   ~    |
  * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         | IBACK|IRANGE|      | W_DEL|      | Sets |           |VolUp |      |      |  Up  | F11  | F12  |  Del   |
- * |---------+------+------+------+------+------|  R   |           |      |------+------+------+------+------+--------|
+ * |         | IBACK|IRANGE|      | W_DEL|      |      |           |VolUp |      |      |  Up  | F11  | F12  |  Del   |
+ * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |         |      |      |      |      |      |------|           |------|      | LEFT | Down |RIGHT |  \   |        |
- * |---------+------+------+------+------+------| Sets |           |      |------+------+------+------+------+--------|
- * | LShift  |X_UNDO|X_CUT |X_COPY|X_PAST|      |  L   |           |VolDow|      |      |      |      |      |  BOOT  |
+ * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * | LShift  |X_UNDO|X_CUT |X_COPY|X_PAST|      |      |           |VolDow|      |      |      |      |      |  BOOT  |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | CTRL  |      |      |      |      |                                       | JAN  |      |      |      | VRSN |
  *   `-----------------------------------'                                       `----------------------------------'
@@ -108,9 +106,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = LAYOUT_ergodox_pretty(
        // left hand
        KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,      KC_F5,   OS_CHANGE,
-       KC_TRNS, IBACK,   IRANGE,  KC_TRNS, WINDOW_DEL, KC_TRNS, SETS_R,
+       KC_TRNS, IBACK,   IRANGE,  KC_TRNS, WINDOW_DEL, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,
-       KC_TRNS, KC_UNDO, KC_CUT,  KC_COPY,  KC_PAST,   KC_TRNS, SETS_L,
+       KC_TRNS, KC_UNDO, KC_CUT,  KC_COPY,  KC_PAST,   KC_TRNS, KC_TRNS,
        KC_LCTL,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                          KC_NO,   KC_NO,
                                                   KC_NO,
@@ -257,20 +255,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case WIN_R:
       if (record->event.pressed) {
           SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_TAP(X_RIGHT)SS_UP(X_LGUI)SS_UP(X_LCTL));
-      }
-      return false;
-      break;
-
-    case SETS_L:
-      if (record->event.pressed) {
-        // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LSHIFT)SS_UP(X_LGUI)SS_UP(X_LCTL));
-      }
-      return false;
-      break;
-
-    case SETS_R:
-      if (record->event.pressed) {
-        // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_TAP(X_TAB)SS_UP(X_LGUI)SS_UP(X_LCTL));
       }
       return false;
       break;
