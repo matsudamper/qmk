@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
     - uses: actions/checkout@v3
       with:
@@ -34,8 +36,6 @@ jobs:
       run: |
         find . | grep "\.hex$"
     - name: Create Release
-      env:
-        GH_TOKEN: ${{ github.token }}
       run: |
         DATE=$(TZ=JST-9 date +"%M-%d_%H-%M-%S")
         gh release create $DATE ./qmk_firmware/ergodox_ez_base_my_custom.hex
