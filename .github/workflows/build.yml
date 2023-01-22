@@ -10,9 +10,7 @@ jobs:
     steps:
     - name: install tools
       run: |
-        curl https://linux.qmk.fm/gpg_pubkey.txt | sudo apt-key add -
-        sudo apt update
-        sudo apt install qmk
+        deb https://linux.qmk.fm/ `cat /etc/os-release | grep VERSION_CODENAME | sed s/VERSION_CODENAME=//` main
     - name: build
       run: |
         qmk --help
