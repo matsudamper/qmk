@@ -21,7 +21,7 @@ jobs:
         path: qmk
     - name: move file
       run: |
-        cp qmk/keyboards/* ./keyboards/
+        cp -r qmk/keyboards/* ./keyboards/
     - name: setup
       run: |
         sudo apt install -y git python3-pip
