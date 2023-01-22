@@ -12,11 +12,16 @@ jobs:
       with:
         repository: qmk/qmk_firmware
         ref: master
-    - name: install tools
-      run: |
-        rm -rf keyboards
-        rm -rf .git
+    # - name: install tools
+    #   run: |
+    #     rm -rf keyboards
+    #     rm -rf .git
     - uses: actions/checkout@v3
+      with:
+        path: ~/keymap
+    - name: move file
+      run: |
+        cp ~/keymap/* ./keymap/
     - name: setup
       run: |
         sudo apt install -y git python3-pip
