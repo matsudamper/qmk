@@ -31,7 +31,7 @@ jobs:
         ls -al
     - name: ls keyboards
       run: |
-        finnd keyboards
+        find keyboards
     - name: build
       run: |
         make -kb ergodox_ez -km my_custom
