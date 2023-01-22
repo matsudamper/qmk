@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        repository: git@github.com:qmk/qmk_firmware.git
+        repository: https://github.com/qmk/qmk_firmware
         ref: master
     - name: install tools
       run: |
