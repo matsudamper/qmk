@@ -30,7 +30,7 @@ jobs:
     - name: build
       run: |
         RGBLIGHT_ENABLE=true make ergodox_ez:default
-    - name: store
+    - name: Create Release
       run: |
         SHORT_SHA1=$(git rev-parse --short HEAD)
         DATE=$(TZ=-9 date '%M-%d_%H-%M-%S')
