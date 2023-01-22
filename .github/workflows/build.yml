@@ -12,12 +12,10 @@ jobs:
       with:
         repository: qmk/qmk_firmware
         ref: master
-    # - name: update submodule
-    #   run: |
-    #     git submodule update --init --recursive
     - name: install tools
       run: |
         rm -rf keyboards
+        rm -rf .git
     - uses: actions/checkout@v3
       with:
         path: keyboards
