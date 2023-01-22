@@ -12,21 +12,19 @@ jobs:
       with:
         repository: qmk/qmk_firmware
         ref: master
-    # - name: install tools
-    #   run: |
-    #     rm -rf keyboards
-    #     rm -rf .git
     - uses: actions/checkout@v3
       with:
         path: qmk
     - name: move file
       run: |
         cp -r qmk/keyboards/* ./keyboards/
-    - name: setup
+    - name: install tools
       run: |
-        sudo apt install -y git python3-pip
+        sudo apt install -y python3-pip
         python3 -m pip install --user qmk
         qmk setup
+
+        apt install -y gcc-avr
     - name: ls
       run: |
         ls -al
