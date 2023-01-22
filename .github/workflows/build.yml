@@ -32,6 +32,5 @@ jobs:
         RGBLIGHT_ENABLE=true make ergodox_ez:default
     - name: Create Release
       run: |
-        SHORT_SHA1=$(git rev-parse --short HEAD)
         DATE=$(TZ=-9 date '%M-%d_%H-%M-%S')
-        gh release create $DATE_$SHORT_SHA1 ./ergodox_ez_base_my_custom.hex
+        gh release create $DATE ./ergodox_ez_base_my_custom.hex
