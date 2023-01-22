@@ -11,8 +11,8 @@ jobs:
     - name: install tools
       run: |
         curl https://linux.qmk.fm/gpg_pubkey.txt | sudo apt-key add -
-        apt update
-        apt install qmk
+        sudo apt update
+        sudo apt install qmk
     - name: build
       run: |
         qmk --help
