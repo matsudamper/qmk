@@ -239,7 +239,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case JAN:
       if (record->event.pressed) {
         if (IS_WIN) {
-          // SEND_STRING(SS_DOWN(X_LCTRL)SS_TAP(X_GRAVE)SS_UP(X_LCTRL));
+          // SEND_STRING(SS_DOWN(X_LCTL)SS_TAP(X_GRAVE)SS_UP(X_LCTL));
         } else {
           // SEND_STRING(SS_DOWN(X_LGUI)SS_TAP(X_SPACE)SS_UP(X_LGUI));
         }
@@ -249,28 +249,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case WIN_L:
       if (record->event.pressed) {
-          // SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LGUI)SS_TAP(X_LEFT)SS_UP(X_LGUI)SS_UP(X_LCTRL));
+          // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_TAP(X_LEFT)SS_UP(X_LGUI)SS_UP(X_LCTL));
       }
       return false;
       break;
 
     case WIN_R:
       if (record->event.pressed) {
-          // SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LGUI)SS_TAP(X_RIGHT)SS_UP(X_LGUI)SS_UP(X_LCTRL));
+          // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_TAP(X_RIGHT)SS_UP(X_LGUI)SS_UP(X_LCTL));
       }
       return false;
       break;
 
     case SETS_L:
       if (record->event.pressed) {
-        // SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LGUI)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LSHIFT)SS_UP(X_LGUI)SS_UP(X_LCTRL));
+        // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LSHIFT)SS_UP(X_LGUI)SS_UP(X_LCTL));
       }
       return false;
       break;
 
     case SETS_R:
       if (record->event.pressed) {
-        // SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LGUI)SS_TAP(X_TAB)SS_UP(X_LGUI)SS_UP(X_LCTRL));
+        // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI)SS_TAP(X_TAB)SS_UP(X_LGUI)SS_UP(X_LCTL));
       }
       return false;
       break;
@@ -287,7 +287,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (IS_WIN) {
           // SEND_STRING(SS_DOWN(X_LGUI)SS_TAP(X_TAB)SS_UP(X_LGUI));
         } else {
-          // SEND_STRING(SS_DOWN(X_LCTRL)SS_TAP(X_UP)SS_UP(X_LCTRL));
+          // SEND_STRING(SS_DOWN(X_LCTL)SS_TAP(X_UP)SS_UP(X_LCTL));
         }
       }
       return false;
@@ -295,7 +295,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case TAB_NEXT:
       if (record->event.pressed) {
         if (IS_WIN) {
-          // SEND_STRING(SS_DOWN(X_LCTRL)SS_TAP(X_TAB)SS_UP(X_LCTRL));
+          // SEND_STRING(SS_DOWN(X_LCTL)SS_TAP(X_TAB)SS_UP(X_LCTL));
         } else {
           // SEND_STRING(SS_DOWN(X_LGUI)SS_TAP(X_TAB)SS_UP(X_LGUI));
         }
@@ -305,7 +305,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case TAB_PREV:
       if (record->event.pressed) {
         if (IS_WIN) {
-          // SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LSHIFT)SS_UP(X_LCTRL));
+          // SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LSHIFT)SS_UP(X_LCTL));
         } else {
           // SEND_STRING(SS_DOWN(X_LGUI)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LSHIFT)SS_UP(X_LGUI));
         }
@@ -332,7 +332,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         if (IS_LAYER1_IDEA_FUNC) {
           IS_LAYER1_IDEA_FUNC = FALSE;
-          SEND_STRING(SS_UP(X_LCTRL));
+          SEND_STRING(SS_UP(X_LCTL));
         } else {
         }
       }
@@ -343,7 +343,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (IS_LAYER1_IDEA_FUNC) {
           SEND_STRING(SS_TAP(X_TAB));
         } else {
-          SEND_STRING(SS_DOWN(X_LCTRL));
+          SEND_STRING(SS_DOWN(X_LCTL));
           SEND_STRING(SS_TAP(X_TAB));
           IS_LAYER1_IDEA_FUNC = TRUE;
         }
@@ -355,7 +355,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (IS_LAYER1_IDEA_FUNC) {
           SEND_STRING(SS_TAP(X_W));
         } else {
-          SEND_STRING(SS_DOWN(X_LCTRL));
+          SEND_STRING(SS_DOWN(X_LCTL));
           SEND_STRING(SS_TAP(X_W));
           IS_LAYER1_IDEA_FUNC = TRUE;
         }
