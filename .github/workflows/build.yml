@@ -29,4 +29,4 @@ jobs:
     - name: build
       run: |
         make keyboard=ergodox_ez keymap=keymap
-        ls -al
+        find . | grep hex
