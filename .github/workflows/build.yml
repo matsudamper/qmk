@@ -18,9 +18,9 @@ jobs:
     #     rm -rf .git
     - uses: actions/checkout@v3
       with:
-        path: ~/keymap
+        path: qmk
     - run: |
-        find ~/keymap
+        find qmk
     - name: move file
       run: |
         cp ~/keymap/keyboards/* ./keyboards/
