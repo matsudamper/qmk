@@ -32,5 +32,5 @@ jobs:
         RGBLIGHT_ENABLE=true make ergodox_ez:default
     - name: Create Release
       run: |
-        DATE=$(TZ=-9 date '%M-%d_%H-%M-%S')
+        DATE=$(TZ=JST-9 date '%M-%d_%H-%M-%S')
         gh release create $DATE ./ergodox_ez_base_my_custom.hex
