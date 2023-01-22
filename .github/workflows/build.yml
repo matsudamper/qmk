@@ -26,6 +26,12 @@ jobs:
         sudo apt install -y git python3-pip
         python3 -m pip install --user qmk
         qmk setup
+    - name: ls
+      run: |
+        ls -al
+    - name: ls keyboards
+      run: |
+        finnd keyboards
     - name: build
       run: |
         make -kb ergodox_ez -km my_custom
