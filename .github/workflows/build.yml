@@ -21,6 +21,7 @@ jobs:
         sudo apt install -y gcc-avr avr-libc
     - name: build
       run: |
+        cd qmk_firmware
         RGBLIGHT_ENABLE=true make ergodox_ez:my_custom
     - name: find hex
       run: |
@@ -30,4 +31,4 @@ jobs:
         GH_TOKEN: ${{ github.token }}
       run: |
         DATE=$(TZ=JST-9 date +"%M-%d_%H-%M-%S")
-        gh release create $DATE ./ergodox_ez_base_my_custom.hex
+        gh release create $DATE ./qmk_firmware/ergodox_ez_base_my_custom.hex
