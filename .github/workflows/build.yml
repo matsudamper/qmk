@@ -39,5 +39,5 @@ jobs:
         find . | grep hex
     - name: build
       run: |
-        make ergodox_ez:my_custom
+        RGBLIGHT_ENABLE=true make ergodox_ez:my_custom
         find . | grep hex
