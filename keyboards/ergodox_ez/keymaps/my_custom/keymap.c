@@ -17,9 +17,13 @@ char IS_PRESS_LAYER1 = FALSE;
 char IS_LAYER1_IDEA_FUNC = FALSE;
 
 enum custom_keycodes {
+#ifdef ORYX_CONFIGURATOR
+    VRSN = EZ_SAFE_RANGE,
+#else
+    VRSN = SAFE_RANGE,
+#endif
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
-  VRSN,
   JAN,
   WIN_L,
   WIN_R,
