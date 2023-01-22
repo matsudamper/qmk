@@ -17,9 +17,6 @@ jobs:
     - uses: actions/checkout@v3
       with:
         path: qmk
-    - name: remove keyboards
-      run: |
-        rm -rf ./keyboards/*
     - name: move file
       run: |
         cp -r qmk/keyboards/* ./keyboards/
