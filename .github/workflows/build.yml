@@ -37,3 +37,7 @@ jobs:
       run: |
         make -kb ergodox_ez -km my_custom
         find . | grep hex
+    - name: build
+      run: |
+        make -kb ergodox_ez -km my_custom
+        find . | grep hex
