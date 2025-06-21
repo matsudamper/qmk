@@ -11,6 +11,13 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: true
+    - name: install tools
+      run: |
+        sudo apt install -y python3-pip
+        python3 -m pip install --user qmk
+        qmk setup
+
+        sudo apt install -y gcc-avr avr-libc
     - name: update submodule
       run: |
         cd qmk_firmware
@@ -19,13 +26,6 @@ jobs:
       run: |
         cp -r ./keyboards/* ./qmk_firmware/keyboards/
         find ./qmk_firmware/keyboards/ | grep "keymap\.c$"
-    - name: install tools
-      run: |
-        sudo apt install -y python3-pip
-        python3 -m pip install --user qmk
-        qmk setup
-
-        sudo apt install -y gcc-avr avr-libc
     - name: build
       run: |
         cd qmk_firmware
